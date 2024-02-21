@@ -18,7 +18,7 @@ class MainController
         $this->view->renderView("app", [
             'name' => 'alireza tahriri',
             'email' => 'alirezatahriri4@gmail.com',
-            'password' => md5('p@$$w0rd')
+            'password' => md5('p@$$w0rd' . $_ENV['APP_KEY'])
         ]);
     }
 }

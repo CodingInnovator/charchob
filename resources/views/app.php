@@ -5,55 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Information</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            line-height: 1.75;
-        }
-
-        html,
-        body {
-            font-size: 16px;
-            box-sizing: border-box;
-            font-family: 'Tomorrow', monospace;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: 18px !important;
-            font-weight: 500;
-        }
-
-        .container {
-            margin: 25px;
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            justify-content: center;
-        }
-
-        .heading {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link href="<?php echo $_ENV['APP_URL'] . "/resources/css/output.css" ?>" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
-        <div class="heading">
-            <h1>User Information</h1>
-            <h2>Show info like (name and email and password)</h2>
+<body class="font-english bg-gray-900 flex items-center justify-center h-screen">
+    <div class="bg-gray-800 text-white p-6 rounded-xl w-fit space-y-8">
+        <div class="space-y-3">
+            <h1 class="font-bold text-3xl"><?php echo $_ENV['APP_NAME'] ?> Framework</h1>
+            <h2>You can sent parameter from controller and use in views.</h2>
         </div>
-        <div>+ Name: <?php echo $data['name'] ?></div>
-        <div>+ Email: <?php echo $data['email'] ?></div>
-        <div>+ Password: <?php echo $data['password'] ?></div>
+        <div class="space-y-1">
+            <div>+ Name: <?php echo $data['name'] ?></div>
+            <div>+ Email: <?php echo $data['email'] ?></div>
+            <div>+ Password: <?php echo $data['password'] ?></div>
+        </div>
+        <div>You're application URL: <a class="text-blue-500 underline" href="<?php echo $_ENV['APP_URL'] ?>"><?php echo $_ENV['APP_URL'] ?></a></div>
     </div>
 </body>
 
