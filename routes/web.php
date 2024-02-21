@@ -5,7 +5,7 @@ use App\Router;
 $router = new Router();
 
 $router->addRoute('GET', '/', function () {
-    echo "Charchob Framework";
+    echo "““ " . $_SERVER['APP_NAME'] . " Framework - Version " . $_SERVER['APP_VERSION'] . " ““";
 });
 
 try {
