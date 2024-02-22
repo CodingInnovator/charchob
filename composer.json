@@ -19,6 +19,7 @@
         "phpunit/phpunit": "^11.0"
     },
     "require": {
-        "symfony/dotenv": "^7.0"
+        "symfony/dotenv": "^7.0",
+        "jenssegers/blade": "^2.0"
     }
 }
