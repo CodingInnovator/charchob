@@ -5,23 +5,21 @@ namespace App\Controllers;
 use App\View;
 use Jenssegers\Blade\Blade;
 
-class MainController
+class MainController extends Controller
 {
     private $view;
-    private $blade;
 
     public function __construct()
     {
         $this->view = new View;
-        $this->blade = new Blade('resources/views', 'resources/cache');
     }
 
     public function index()
     {
-        echo $this->blade->render('app', [
+        $this->renderViewFromBlade('app', [
             'name' => 'alireza tahriri',
             'email' => 'alirezatahriri4@gmail.com',
-            'password' => md5('p@$$w0rd' . $_ENV['APP_KEY'])
+            'password' => $this->hashPassword('p@$$w0rd'),
         ]);
 
         // $this->view->renderView("app", [
