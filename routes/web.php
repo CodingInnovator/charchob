@@ -6,18 +6,14 @@ use App\View;
 $router = new Router();
 $view = new View();
 
-// $router->addRoute('GET', '/', function () use ($view) {
-//     return $view->renderView('app', [
-//         'name' => 'alireza tahriri',
-//         'email' => 'alirezatahriri4@gmail.com',
-//         'password' => md5('p@$$w0rd' . $_ENV['APP_KEY'])
-//     ]);
-// });
-
-$router->addRouteUsingController('GET', '/', 'MainController@index');
+try {
+    $router->addRouteUsingController('GET', '/', 'MainController@index');
+} catch (Exception $e) {
+    echo "Routes Error (web.php): " . $e->getMessage();
+}
 
 try {
     $router->matchRoute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 } catch (Exception $e) {
-    echo "Error: " . $e->getMessage();
+    echo "Error: (matchRoute function)" . $e->getMessage();
 }

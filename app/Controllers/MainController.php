@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Database;
 use App\View;
 use Jenssegers\Blade\Blade;
 
@@ -16,6 +17,8 @@ class MainController extends Controller
 
     public function index()
     {
+        $this->connectToDatabase();
+
         $this->renderViewFromBlade('app', [
             'name' => 'alireza tahriri',
             'email' => 'alirezatahriri4@gmail.com',

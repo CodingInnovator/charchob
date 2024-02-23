@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Information</title>
+    <script src="<?php echo e($_ENV['APP_URL'] . '/resources/js/app.js'); ?>"></script>
     <link href="<?php echo e($_ENV['APP_URL'] . '/resources/css/output.css'); ?>" rel="stylesheet">
 </head>
 
